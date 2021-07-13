@@ -1,12 +1,12 @@
 import os
 import glob
 import time
+import RPi
 from RPLCD import CharLCD
 
 lcd = CharLCD(cols=16, rows=2, pin_rs=37, pin_e=35, pins_data=[33, 31, 29, 23])
 
-os.system('modprobe w1-gpio')
-os.system('modprobe w1-therm')
+RPi.GPIO.setmode(RPi.GPIO.BOARD)
 
 base_dir = '/sys/bus/w1/devices/'
 device_folder = glob.glob(base_dir + '28*')[0]
@@ -47,6 +47,6 @@ def read_temp_f():
 while True:
 
     lcd.cursor_pos = (0, 0)
-    lcd.write_string("Temp: " + read_temp_c() + unichr(223) + "C")
+    lcd.write_string("Temp: " + read_temp_c() + "C")
     lcd.cursor_pos = (1, 0)
-    lcd.write_string("Temp: " + read_temp_f() + unichr(223) + "F")
+    lcd.write_string("Temp: " + read_temp_f() + "F")
