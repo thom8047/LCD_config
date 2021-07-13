@@ -12,6 +12,7 @@ while (True):
         time.sleep(1)
     except KeyboardInterrupt:
         print("\nEND SCRIPT\n")
+        break
 
 
 GPIO.cleanup()
