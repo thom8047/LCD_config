@@ -4,9 +4,9 @@ import time
 import RPi
 from RPLCD import CharLCD
 
-lcd = CharLCD(cols=16, rows=2, pin_rs=37, pin_e=35, pins_data=[33, 31, 29, 23])
-
 RPi.GPIO.setmode(RPi.GPIO.BOARD)
+
+lcd = CharLCD(cols=16, rows=2, pin_rs=37, pin_e=35, pins_data=[33, 31, 29, 23])
 
 base_dir = '/sys/bus/w1/devices/'
 device_folder = glob.glob(base_dir + '28*')[0]
