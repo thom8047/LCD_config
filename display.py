@@ -10,9 +10,9 @@ while (True):
         time.sleep(1)
         GPIO.output(7, False)
         time.sleep(1)
-    except KeyboardInterrupt:
-        print("\nEND SCRIPT\n")
-        break
+    # except KeyboardInterrupt as err:
+    #     print("\nEND SCRIPT\n")
+    #     break
 
 
 GPIO.cleanup()
