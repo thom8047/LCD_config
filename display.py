@@ -1,6 +1,11 @@
-import gpiozero as gz
+from RPLCD.i2c import CharLCD
 import time
 
-sensor = gz.SmoothedInputDevice(17)
+#setup for charld
+lcd = CharLCD("PCF8574", 0x27)
 
-print(sensor.value)
+lcd.write_string("test...")
+
+sensor = gz.LED(17)
+sensor.on()
+

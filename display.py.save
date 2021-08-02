@@ -1,0 +1,8 @@
+import RPI.GPIO as gpio
+import gpiozero as gz
+import time
+
+sensor = gz.LED(17)
+sensor.on()
+
+while true:
