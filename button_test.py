@@ -3,7 +3,7 @@ from RPLCD.i2c import CharLCD as LCD
 from time import sleep
 
 button = gz.Button(26)
-lcd = LCD("PCF8574", 0x27)
+lcd = LCD("PCF8574", 0x27, cols=16, rows=2)
 
 # init
 button.hold_time = 6
